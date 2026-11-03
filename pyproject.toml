@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "spadak-harness"
+version = "0.1.0"
+description = "Spadak: a modular, production-grade harness for AI agents — composed of independent sub-frameworks (core, memory, tools, orchestration, evaluation, safety) unified by a single runtime."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Spadak Team" }]
+keywords = ["ai-agents", "harness", "llm", "orchestration", "evaluation", "agents"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Intended Audience :: Developers",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.scripts]
+spadak = "spadak.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["spadak*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
